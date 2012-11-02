@@ -1,0 +1,73 @@
+
+{% extends "base.html" %}
+{% load calc %}
+
+
+{% block content %}
+
+  <br><br><br>
+  {% for post in posts %}
+    <div id="post_title">
+  	<a href="{{ post.get_permalink }}">
+  		{{ post.title }}
+  	</a>
+    </div>
+    <div id="post_details">
+    {% ifequal list_categories 'true' %}
+        <a href="{{ post.category.get_permalink }}" style="color: #{{ post.category.color }}">
+          {{ post.category }}
+        </a> &middot;
+      
+    {% endifequal %}
+    
+    {{ post.date_published|date:"j F Y"|lower  }}
+    
+    {% for tag in post.get_tags %}
+      &middot;
+      <span id="tag">{{ tag }}</span>
+    {% endfor %}
+    </div>
+    <div id="post_body">{% autoescape off %}{{ post.brief }}{% endautoescape %} 
+        <a href="{{ post.get_permalink }}"> continue reading</a>
+    </div>
+
+  {% for gallery in post.galleries.all %}
+    <div id="gallery">
+    <div id="gallery_title">
+      {{ gallery.title }}
+    </div>
+    <div id="gallery_{{ gallery.pk }}">
+    {% for picture in gallery.picture_set.all %}
+      <div class="picture" style="width: {{ picture.thumbnail_size|divwidth:130 }}px;">
+        <a href="/media/{{ picture.url_resize }}" rel="lightbox[gallery_{{ gallery.pk }}]" title="{{ picture.title }}">
+          <img src="/media/{{ picture.url_thumbnail }}" alt="{{ picture.title }}">
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+    <div id="post_body" style="text-align: right;">
+    <a href="{{ post.get_fullpermalink }}"> view full gallery</a>
+    </div>
+    </div>
+  {% endfor %}
+  <br><br>
+  {% endfor %}
+
+    <script>
+      window.onload = function() {
+        {% for post in posts %}
+          {% for gallery in post.galleries.all %}
+            var wall_{{ gallery.pk }} = new Masonry( document.getElementById('gallery_{{ gallery.pk }}'), {
+             columnWidth: 130,
+             itemSelector: '.picture',
+             gutterWidth: 5,
+             isFitWidth: true,
+             isAnimated: !Modernizr.csstransitions
+            });
+          {% endfor %}
+        {% endfor %}
+      };
+    </script> 
+
+{% endblock %}
+

@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+{% load calc %}
+
+
+{% block content %}
+
+ <div id="section_header">send me an email</div>
+  {% if msg|length > 0 %}
+  <div class="msg_red">{{ msg }}</div>
+  {% endif %}
+  <br>
+  <div>
+    <form name="theform" action="." method="post" id="theform">
+        {% csrf_token %} 
+        <div id="name_email">
+              <label id="id_name">Name:</label>
+              <br>
+              <input class="email" type="text" name="name" value="{{ name }}" id="name" />
+            <br><br>
+              <label id="id_email">Your email:</label>
+              <br>
+              <input class="email" type="text" name="email" value="{{ email }}" id="email" />
+        </div>
+        <br>
+        <div id="message" style="float: none;" >
+            <label id="id_message">Message:</label>
+            <br>
+            <textarea class="email" name="message" rows="8" cols="37" >{{ message }}</textarea>
+        </div>
+        <br><br>
+        <div id="logo">
+            <a href="javascript:document.theform.submit();">send email</a>
+                        
+        </div>
+
+        <input class="hidden" type="hidden" name="topic" value="sitterle.co | Contact Form Submission" id="subject" />
+    </form>
+  </div>
+
+
+{% endblock %}
+

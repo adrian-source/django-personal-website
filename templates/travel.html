@@ -1,0 +1,63 @@
+{% extends "category.html" %}
+	
+{% block heading %}
+
+
+	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+	<script type='text/javascript'>
+     google.load('visualization', '1', {'packages': ['geochart']});
+     google.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City',   '1'],
+        ['Luang Prabang, Laos',      1],
+        ['Vientiane, Laos',     1],
+        ['Parkse, Laos',    1],
+        ['Warsaw, Poland',     1],
+        ['Debzno, Poland', 1],
+        ['Radomsko, Poland', 1],
+        ['Hillsborough, NJ',   1],
+        ['Manwille, NJ',     1],
+        ['Boise, ID',   1],
+        ['Borah, ID', 1],
+        ['New York, NY', 1],
+        ['Tunisia', 1],
+        ['Portland', 1],
+        ['Vancouver, WA', 1],
+        ['Mountain View, CA', 1],
+        ['San Francisco, CA', 1],
+        ['Guangzhaou, CN', 1],
+        ['Hong Kong, HK', 1],
+        ['Venice, Italy', 1],
+    
+      ]);
+
+      var options = {
+        displayMode: 'markers',
+        colorAxis: {colors: ['#{{ current_category.color }}']},
+        sizeAxis: {maxSize: 4},
+        markerOpacity: 0.9,
+        legend: 'none',
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
+    </script>
+
+  <table>
+    <tr>
+      <td>
+	     <div id="chart_div" style="width: 300px; margin-top: 30px; margin-right: 20px;"></div>
+      </td>
+      <td>
+        <div id="heading" style=" line-height: 25px; background: white; color: #{{ current_category.color }};">
+        I never say no to a great travel opportunity. Below are my reflections and images from a few of my voyages.
+        </div>
+      </td>
+    </tr>
+  </table>
+  
+  <div style="clear: both;"> </div>
+{% endblock %}
