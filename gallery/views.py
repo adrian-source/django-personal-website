@@ -11,7 +11,7 @@ def sync_db_and_folders(request):
 	path = settings.MEDIA_ROOT+"/gallery/"
 	for folder in os.listdir(path):
 		if os.path.isdir(os.path.join(path, folder)):
-			gallery, created = Gallery.objects.get_or_create(title=folder)
+			gallery, created = Gallery.objects.get_or_create(title=folder.replace('-',' '))
 			for image in os.listdir(os.path.join(path, folder)):
 				if not image[0] == ".":
 					image, created = Picture.objects.get_or_create(title=os.path.splitext(image)[0].replace('-',' '), url_org="gallery/"+folder+"/"+image, gallery=gallery)
