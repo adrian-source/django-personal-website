@@ -1,6 +1,6 @@
 
 /* GENERAL */
-body{ font-weight: normal; padding: 20px 10% 10px 10%; background-color: white; font-family: "Helvetica Neue", Helvetica, Arial, FreeSans, sans-serif; -webkit-font-smoothing: antialiased; color: #555; }
+body{ font-weight: normal; padding: 20px 10% 10px 10%; background-color: white; font-family: "Helvetica Neue", Helvetica, Arial, FreeSans, sans-serif; -webkit-font-smoothing: antialiased; color: #555; height: 100%;}
 html{ border-left: 15px solid white; height: 100%; }
 #container{ max-width: 680px; padding: 0px 10px 10px 10px; }
 
@@ -45,7 +45,7 @@ html{ border-left: 15px solid white; height: 100%; }
 
 /* GALLERY TITLE */
 #gallery_title{ padding: 5px; background-color: darkgray; color: white; border-radius: 5px; size: 10px; margin-bottom: 5px;}
-#gallery{ background-color: #F0F0F0; padding: 5px 5px 7px 5px; }
+#gallery{  padding: 5px 5px 7px 5px; }
 /* FORM STYLE */
 .email{ background-color: lightgray; border: none; font-family: 'Carrois Gothic', sans-serif; font-size: 15pt; width: %100; padding: 5pt; margin-top: 10px; width: 90%; }
 

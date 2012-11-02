@@ -37,7 +37,7 @@
       {{ gallery.title }}
     </div>
     <div id="gallery_{{ gallery.pk }}">
-    {% for picture in gallery.picture_set.all %}
+    {% for picture in gallery.picture_set.all|slice:":5" %}
       <div class="picture" style="width: {{ picture.thumbnail_size|divwidth:130 }}px;">
         <a href="/media/{{ picture.url_resize }}" rel="lightbox[gallery_{{ gallery.pk }}]" title="{{ picture.title }}">
           <img src="/media/{{ picture.url_thumbnail }}" alt="{{ picture.title }}">
