@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {% load calc %}
 
-{% block keywords %}{% for tag in post.get_tags %}{{ tag }}{% endfor %}{% endblock %}
+{% block keywords %}{% for tag in post.get_tags %} {{ tag }}{% endfor %}{% endblock %}
 
 {% block content %}
 
