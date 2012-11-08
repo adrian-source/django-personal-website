@@ -31,25 +31,7 @@
         <a href="{{ post.get_permalink }}"> continue reading</a>
     </div>
 
-  {% for gallery in post.galleries.all %}
-    <div id="gallery">
-    <div id="gallery_title">
-      {{ gallery.title }}
-    </div>
-    <div id="gallery_{{ gallery.pk }}">
-    {% for picture in gallery.picture_set.all|slice:":5" %}
-      <div class="picture" style="width: {{ picture.thumbnail_size|divwidth:130 }}px;">
-        <a href="/media/{{ picture.url_resize }}" rel="lightbox[gallery_{{ gallery.pk }}]" title="{{ picture.title }}">
-          <img src="/media/{{ picture.url_thumbnail }}" alt="{{ picture.title }}">
-        </a>
-      </div>
-    {% endfor %}
-    </div>
-    <div id="post_body" style="text-align: right;">
-    <a href="{{ post.get_fullpermalink }}"> view full gallery</a>
-    </div>
-    </div>
-  {% endfor %}
+
   <br><br>
   {% endfor %}
 
@@ -62,7 +44,6 @@
              itemSelector: '.picture',
              gutterWidth: 5,
              isFitWidth: true,
-             isAnimated: !Modernizr.csstransitions
             });
           {% endfor %}
         {% endfor %}
