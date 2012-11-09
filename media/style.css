@@ -43,6 +43,9 @@ body{ font-weight: normal; margin: 0px; background-color: white; font-family: "H
 	transition: left .4s ease-in-out, top .4s ease-in-out .4s;
 	*.
 
+/* TAG */
+#tag a { color: darkgray; }
+#tag a:hover { color: black; }
 
 /* GALLERY TITLE */
 #gallery_title{ padding: 5px; background-color: darkgray; color: white; border-radius: 5px; size: 10px; margin-bottom: 5px;}

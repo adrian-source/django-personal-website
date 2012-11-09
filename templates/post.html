@@ -66,8 +66,16 @@
 	             gutterWidth: 5,
 	             isFitWidth: true,
 	            });
+
+	           $(function(){
+	               $('#gallery_{{ gallery.pk }} a').lightBox({ 
+	                    imageBtnClose:               '/media/close.gif', 
+	               });
+	            });
 	          {% endfor %}
 	      };
+	           
+          
 	    </script>
 	    
 

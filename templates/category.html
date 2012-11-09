@@ -24,7 +24,7 @@
     
     {% for tag in post.get_tags %}
       &middot;
-      <span id="tag">{{ tag }}</span>
+      <span id="tag"><a href="/tag/{{ tag }}/">{{ tag }}</a></span>
     {% endfor %}
     </div>
     <div id="post_body">{% autoescape off %}{{ post.brief }}{% endautoescape %} 

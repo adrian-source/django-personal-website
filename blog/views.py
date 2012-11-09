@@ -73,6 +73,18 @@ def main(request):
 		'title' : 'home'
 		})
 
+def tag(request, tag):
+
+	posts = Post.objects.filter(status=2, tags=tag).order_by('-date_published')
+
+	return render_to_response("tag.html", {
+		'categories' : Category.objects.filter(status=2).order_by('order'),
+		'posts' : posts,
+		'list_categories' : 'true',
+		'title' : 'TAG: '+tag
+		})
+
+
 def contact(request):
 	subject = request.POST.get('topic', '')
 	name = request.POST.get('name', '')
