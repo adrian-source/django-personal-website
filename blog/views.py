@@ -138,7 +138,7 @@ def sitemap(request):
 	# loop through all posts
 	for post in Post.objects.filter(status=2):
 		sitemap += "http://sitterle.co"+post.get_permalink()+"\n"
-		sitemap += "http://sitterle.co"+post.get_fullpermalink()+"\n"
+		#sitemap += "http://sitterle.co"+post.get_fullpermalink()+"\n"
 
 	return render_to_response('sitemap.txt', {
 				'sitemap' : sitemap
