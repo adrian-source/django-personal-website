@@ -6,7 +6,7 @@ body{ font-weight: normal; margin: 0px; background-color: white; font-family: "H
 #container{ max-width: 680px; padding: 0px 10px 0px 10px; }
 
 /* LOGO */
-#logo, #logo a{ font-family: 'Questrial', sans-serif; font-size: 20px; color: #555; text-decoration: none; float: left;}
+#logo, #logo a{ font-family: 'Questrial', sans-serif; font-size: 30px; color: #555; text-decoration: none; float: left;}
 #logo a{ padding-right: 8px; border-right: 3px solid #3D7CB1; }
 #logo a:hover{ color: red; padding-right: 8px; border-right: 3px solid red;}
 
@@ -30,7 +30,8 @@ body{ font-weight: normal; margin: 0px; background-color: white; font-family: "H
 /* HEADING MESSAGE */
 #heading{ font-size: 15pt; background-color: #3D7CB1; color: white; padding: 15px 10px; margin-top: 25px; border-radius: 7px; border: 1px solid #3D7CB1; }
 #heading code{ font-weight: bold; color: white; font-size: 10pt; }
-#heading-links a{ color: #3D7CB1; text-decoration: none; margin: 6px; font-size: 11pt;}
+#heading-links{padding-top: 5px;}
+#heading-links a{ color: #3D7CB1; text-decoration: none; font-size: 11pt; margin: 0px 7px;}
 #heading-links a:hover{color: red;}
 
 /* footer */
