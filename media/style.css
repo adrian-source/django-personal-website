@@ -1,4 +1,3 @@
-
 /* GENERAL */
 html{ border-left: 0px solid white; height: 100%; position: relative; margin: 0px; padding: 0px;}
 body{ font-weight: normal; margin: 0px; background-color: white; font-family: "Helvetica Neue", Helvetica, Arial, FreeSans, sans-serif; -webkit-font-smoothing: antialiased; color: #555; height: 100%; width: 100%; position: absolute;}
@@ -26,7 +25,8 @@ body{ font-weight: normal; margin: 0px; background-color: white; font-family: "H
 #post_body{ padding-bottom: 10px; line-height: 25px; font-size: 14px;}
 #post_body a{ size: 13px; border-right: 3px solid #3D7CB1; padding-right: 7px; text-decoration: none; color: #3D7CB1;}
 #post_body a:hover { color: red; border-color: red;}
-#post pre { font-size: 12pt; line-height: 12pt;}
+
+pre { font-size: 9pt; line-height: 9pt;}
 
 /* HEADING MESSAGE */
 #heading{ font-size: 15pt; background-color: #3D7CB1; color: white; padding: 15px 10px; margin-top: 25px; border-radius: 7px; border: 1px solid #3D7CB1; }
