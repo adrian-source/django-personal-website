@@ -28,7 +28,7 @@
     {% endfor %}
     </div>
     <div id="post_body">{% autoescape off %}{{ post.brief }}{% endautoescape %} 
-        <a href="{{ post.get_permalink }}"> continue reading</a>
+        <a href="{{ post.get_permalink }}" title="{{ post.title }}"> continue reading...</a>
     </div>
 
 
