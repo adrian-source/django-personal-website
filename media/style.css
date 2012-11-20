@@ -23,7 +23,7 @@ body{ font-weight: normal; margin: 0px; background-color: white; font-family: "H
 #post_details a{ text-decoration: none; }
 #post_details a:hover{ text-decoration: underline; }
 #post_body{ padding-bottom: 10px; line-height: 25px; font-size: 14px;}
-#post_body a{ size: 13px; border-right: 3px solid #3D7CB1; padding-right: 7px; text-decoration: none; color: #3D7CB1;}
+#post_body a{ size: 13px; border-right: 0px solid #3D7CB1; padding-right: 0px; text-decoration: none; color: #3D7CB1;}
 #post_body a:hover { color: red; border-color: red;}
 
 pre { font-size: 9pt; line-height: 9pt;}
